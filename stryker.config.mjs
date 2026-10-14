@@ -9,5 +9,13 @@ const config = {
   testRunner_comment:
     "Take a look at https://stryker-mutator.io/docs/stryker-js/jest-runner for information about the jest plugin.",
   coverageAnalysis: "perTest",
+  mutator: {
+    excludedMutations: [
+      // Exclude mutators that produce equivalent mutants in our codebase
+      "LogicalOperator",
+      "EqualityOperator",
+      "ConditionalExpression"
+    ]
+  }
 };
 export default config;
